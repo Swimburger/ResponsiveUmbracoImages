@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/ResponsiveUmbracoImages/App_Data/Logs
+/ResponsiveUmbracoImages/App_Data/TEMP
+/ResponsiveUmbracoImages/App_Data/cache
