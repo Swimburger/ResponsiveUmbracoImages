@@ -453,8 +453,8 @@
     <Content Include="Views\MacroPartials\ResponsiveImage.cshtml" />
     <Content Include="Views\masterPage.cshtml" />
     <Content Include="Views\Page.cshtml" />
-    <Content Include="Views\MacroPartials\ResponsiveImageHighRes.cshtml" />
-    <Content Include="Views\MacroPartials\ResponsiveImageHighResWithWebp.cshtml" />
+    <Content Include="Views\MacroPartials\ResponsiveImageHighDPI.cshtml" />
+    <Content Include="Views\MacroPartials\ResponsiveImageHighDPIWithWebp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
