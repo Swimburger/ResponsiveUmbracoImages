@@ -66,6 +66,9 @@
     <Reference Include="ImageProcessor, Version=2.7.0.100, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ImageProcessor.2.7.0.100\lib\net452\ImageProcessor.dll</HintPath>
     </Reference>
+    <Reference Include="ImageProcessor.Plugins.WebP, Version=1.2.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Plugins.WebP.1.2.0.100\lib\net452\ImageProcessor.Plugins.WebP.dll</HintPath>
+    </Reference>
     <Reference Include="ImageProcessor.Web, Version=4.10.0.100, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ImageProcessor.Web.4.10.0.100\lib\net452\ImageProcessor.Web.dll</HintPath>
     </Reference>
@@ -451,6 +454,7 @@
     <Content Include="Views\masterPage.cshtml" />
     <Content Include="Views\Page.cshtml" />
     <Content Include="Views\MacroPartials\ResponsiveImageHighRes.cshtml" />
+    <Content Include="Views\MacroPartials\ResponsiveImageHighResWithWebp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
