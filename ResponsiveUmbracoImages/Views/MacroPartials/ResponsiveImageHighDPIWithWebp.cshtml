@@ -5,17 +5,17 @@
 @{
     var image = Umbraco.Media(Model.GetParameterValue<string>("image")) as ContentModels.Image;
 
-    var defaultWidth = Model.GetParameterValue<int>("imageDisplayWidth", -1);
-    var defaultWidthTablet = Model.GetParameterValue<int>("imageDisplayWidthTablet", -1);
-    var defaultWidthPhone = Model.GetParameterValue<int>("imageDisplayWidthPhone", -1);
+    var displayWidth = Model.GetParameterValue<int>("imageDisplayWidth", 0);
+    var displayWidthTablet = Model.GetParameterValue<int>("imageDisplayWidthTablet", 0);
+    var displayWidthPhone = Model.GetParameterValue<int>("imageDisplayWidthPhone", 0);
 
     var alt = Model.GetParameterValue<string>("alt");
     alt = alt == null ? string.Empty : string.Format("alt=\"{0}\"", alt);
 }
 <picture>
-    @RenderSource(image, defaultWidthPhone, "(max-width: 425px)")
-    @RenderSource(image, defaultWidthTablet, "(max-width: 768px)")
-    @RenderSource(image, defaultWidth)
+    @RenderSource(image, displayWidthPhone, "(max-width: 480px)")
+    @RenderSource(image, displayWidthTablet, "(max-width: 768px)")
+    @RenderSource(image, displayWidth)
     <img src="@image.Url" @Html.Raw(alt) />
 </picture>
 

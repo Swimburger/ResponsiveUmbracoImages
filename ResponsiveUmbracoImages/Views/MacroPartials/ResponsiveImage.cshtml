@@ -3,30 +3,31 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     var image = Umbraco.Media(Model.GetParameterValue<string>("image")) as ContentModels.Image;
-    
-    var defaultWidth = Model.GetParameterValue<int>("imageDisplayWidth", -1);
-    var defaultWidthTablet = Model.GetParameterValue<int>("imageDisplayWidthTablet", -1);
-    var defaultWidthPhone = Model.GetParameterValue<int>("imageDisplayWidthPhone", -1);
-    
+
+    var displayWidth = Model.GetParameterValue<int>("imageDisplayWidth", 0);
+    var displayWidthTablet = Model.GetParameterValue<int>("imageDisplayWidthTablet", 0);
+    var displayWidthPhone = Model.GetParameterValue<int>("imageDisplayWidthPhone", 0);
+
     var alt = Model.GetParameterValue<string>("alt");
     alt = alt == null ? string.Empty : string.Format("alt=\"{0}\"", alt);
 }
 <picture>
-    @if(defaultWidthPhone > 0){
+    @if(displayWidthPhone > 0){
         <source 
-            srcset="@image.Url.GetCropUrl(width: defaultWidthPhone)" 
-            media="(max-width: 425px)" 
-            sizes="@(defaultWidthPhone)px" />
+            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidthPhone))" 
+            media="(max-width: 480px)" 
+            sizes="@(displayWidthPhone)px" />
     }
-    @if(defaultWidthTablet > 0){
+    @if(displayWidthTablet > 0){
         <source 
-            srcset="@image.Url.GetCropUrl(width: defaultWidthTablet)" 
+            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidthTablet))" 
             media="(max-width: 768px)" 
-            sizes="@(defaultWidthTablet)px" />
-    }@if(defaultWidth > 0){
+            sizes="@(displayWidthTablet)px" />
+    }
+    @if(displayWidth > 0){
         <source 
-            srcset="@image.Url.GetCropUrl(width: defaultWidth)" 
-            sizes="@(defaultWidth)px" />
+            srcset="@Html.Raw(image.Url.GetCropUrl(width: displayWidth))" 
+            sizes="@(displayWidth)px" />
     }
     <img src="@image.Url" @Html.Raw(alt) />
 </picture>
