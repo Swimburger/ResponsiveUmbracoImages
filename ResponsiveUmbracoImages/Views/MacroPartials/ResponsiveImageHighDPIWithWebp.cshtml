@@ -13,13 +13,13 @@
     alt = alt == null ? string.Empty : string.Format("alt=\"{0}\"", alt);
 }
 <picture>
-    @RenderSource(image, displayWidthPhone, "(max-width: 480px)")
-    @RenderSource(image, displayWidthTablet, "(max-width: 768px)")
-    @RenderSource(image, displayWidth)
+    @RenderSources(image, displayWidthPhone, "(max-width: 480px)")
+    @RenderSources(image, displayWidthTablet, "(max-width: 768px)")
+    @RenderSources(image, displayWidth)
     <img src="@image.Url" @Html.Raw(alt) />
 </picture>
 
-@helper RenderSource(ContentModels.Image image, int displayWidth, string mediaQuery = null)
+@helper RenderSources(ContentModels.Image image, int displayWidth, string mediaQuery = null)
 {
     int nativeWidth = image.Value<int>("umbracoWidth");
     mediaQuery = mediaQuery == null ? string.Empty : string.Format("media=\"{0}\"", mediaQuery);
