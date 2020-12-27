@@ -8,4 +8,4 @@ There's 3 macro's included in this project, each building on the previous:
 
 All HTML uses web capabilities that are progressive enhancements that fallback safely if not supported.
 
-[BLOG POST WILL COME AS PART OF UMBRACO 24DAYS]
+Read  "[Implementing Responsive Images in Umbraco](https://24days.in/umbraco-cms/2019/chocolates-plus-images/responsive-images/)"
